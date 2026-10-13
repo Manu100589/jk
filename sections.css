@@ -151,10 +151,11 @@
 .site-content-shell .listing-empty > p { max-width: 390px; color: #6c7072; font-size: 12px; }
 .site-content-shell .empty-note { color: #858681; }
 .site-content-shell .map-story { grid-template-columns: 1.03fr .97fr; min-height: 430px; padding: 19px var(--gutter); background: #fff; }
-.site-content-shell .map-art { min-height: 390px; border-radius: 8px; background: #e8e8df; }
+.site-content-shell .map-art { min-height: 390px; border-radius: 8px; background: #e8e8df url("./assets/terrain-survey-cameroon.png") center 48% / cover no-repeat; }
+.site-content-shell .map-art::before { background: linear-gradient(0deg, #14231a99, transparent 52%), linear-gradient(135deg, #163c2c55, #15342518); opacity: 1; }
 .site-content-shell .contour-lines path { stroke: #667c6544; }
-.site-content-shell .map-label { color: #596452; }
-.site-content-shell .map-label b { color: #18783b; }
+.site-content-shell .map-label { color: #fff; }
+.site-content-shell .map-label b { color: #d8e9b2; }
 .site-content-shell .map-copy { padding: 46px clamp(24px, 5vw, 72px); color: #171b24; }
 .site-content-shell .map-copy .supra-label { color: #18783b; }
 .site-content-shell .map-copy h2 { font-size: clamp(37px, 4.5vw, 59px); font-weight: 500; line-height: 1.06; }
