@@ -38,10 +38,10 @@
 .site-content-shell .intro-body > p { max-width: 470px; margin: 2px 0 19px; font-size: clamp(12px, .9vw, 14px); line-height: 1.85; color: #5c6063; }
 .site-content-shell .dark-link { color: #171b24; }
 .site-content-shell .text-link { font-size: 9px; }
-.site-content-shell .company-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 23px; margin-top: 28px; padding-top: 21px; border-top: 1px solid #e9e8e4; }
-.site-content-shell .company-facts article { display: flex; flex-direction: column; gap: 4px; }
+.site-content-shell .company-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; padding-top: 21px; border-top: 1px solid #e9e8e4; }
+.site-content-shell .company-facts article { display: flex; flex-direction: column; gap: 4px; padding: 17px 18px; color: #fff; background: #159B3B; }
 .site-content-shell .company-facts strong { font-size: clamp(22px, 2.7vw, 34px); line-height: 1; font-weight: 600; letter-spacing: -.06em; }
-.site-content-shell .company-facts span { font-size: 10px; color: #74777a; line-height: 1.55; }
+.site-content-shell .company-facts span { font-size: 10px; color: #fff; line-height: 1.55; }
 .site-content-shell .commitment-intro { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 53px; padding: 13px 0; border-top: 1px solid #e8e7e3; border-bottom: 1px solid #e8e7e3; color: #65686b; font-size: 8px; }
 .site-content-shell .commitment-intro a { color: #171b24; font-weight: 700; }
 .site-content-shell .commitment-intro b { padding-left: 5px; color: #7136a8; }
