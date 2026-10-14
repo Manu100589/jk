@@ -120,6 +120,13 @@
 .site-content-shell .service-card p { min-height: 4.2em; margin: 0; color: #64696c; font-size: 11px; line-height: 1.6; }
 .site-content-shell .service-more { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 9px; border-top: 1px solid #ecebe7; color: #171b24; font-size: 9px; font-weight: 700; }
 .site-content-shell .service-more > span { color: #7136a8; font-size: 11px; }
+.site-content-shell .service-slider-meta { display: flex; align-items: center; gap: 18px; margin-top: 5px; }
+.site-content-shell .service-slider-range { flex: 0 0 auto; color: #171b24; font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.site-content-shell .service-slider-range b { color: #858782; font-size: 10px; font-weight: 500; }
+.site-content-shell .service-slider-progress { height: 2px; flex: 1 1 auto; overflow: hidden; background: #e8e6df; }
+.site-content-shell .service-slider-progress > span { display: block; width: 0; height: 100%; background: #159b3b; transition: width .25s ease; }
+.site-content-shell .service-slider-hint { flex: 0 0 auto; color: #858782; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.site-content-shell #service-grid:focus-visible { outline: 2px solid #159b3b; outline-offset: 5px; }
 .site-content-shell .services-foot { margin-top: 22px; color: #7a7c7c; }
 
 /* Four-step process, listing state and map illustration */
@@ -235,6 +242,8 @@
   .site-content-shell .services-intro-controls > p { max-width: 280px; text-align: left; }
   .site-content-shell .service-grid { gap: 11px; margin-top: 25px; }
   .site-content-shell .service-card { flex-basis: calc((100% - 11px) / 2); }
+  .site-content-shell .service-slider-meta { gap: 10px; }
+  .site-content-shell .service-slider-hint { display: none; }
   .site-content-shell .service-photo-wrap { height: clamp(150px, 42vw, 225px); }
   .site-content-shell .service-card p { min-height: 5.5em; }
   .site-content-shell .process { padding-top: 58px; padding-bottom: 40px; }
@@ -272,6 +281,7 @@
   .site-content-shell .visual-card figcaption span { font-size: 4px; }
   .site-content-shell .visual-card figcaption b { font-size: 8px; }
   .site-content-shell .service-card { flex-basis: 78%; }
+  .site-content-shell .service-slider-range { font-size: 10px; }
   .site-content-shell .service-photo-wrap { height: 195px; }
   .site-content-shell .service-card p { min-height: 0; }
   .site-content-shell .services-foot { align-items: flex-start; flex-direction: column; }
@@ -401,42 +411,25 @@
   .site-footer .legal-note { font-size: 12px; }
 }
 
-/* Clear overview of the company's main service areas */
-.site-content-shell .service-overview { padding-top: 82px; padding-bottom: 54px; background: #fff; }
-.site-content-shell .service-overview-heading { display: flex; align-items: end; justify-content: space-between; gap: 48px; margin-bottom: 34px; }
-.site-content-shell .service-overview-heading .section-kicker { margin-bottom: 31px; }
-.site-content-shell .service-overview-heading h2 { margin: 8px 0 0; font-size: clamp(38px, 4.4vw, 58px); line-height: 1.08; font-weight: 500; letter-spacing: -.065em; }
-.site-content-shell .service-overview-heading h2 em { color: #7136a8; font-family: var(--serif); font-weight: 400; }
-.site-content-shell .service-overview-intro { max-width: 340px; padding-bottom: 4px; }
-.site-content-shell .service-overview-intro p { margin: 0 0 17px; color: #686c70; font-size: 11px; line-height: 1.85; }
-.site-content-shell .service-overview-intro .text-link { color: #18783b; }
-.site-content-shell .service-overview-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; }
-.site-content-shell .service-overview-card { min-width: 0; overflow: hidden; border-radius: 7px; background: #f7f6f2; }
-.site-content-shell .service-overview-card > img { display: block; width: 100%; height: clamp(155px, 17vw, 218px); object-fit: cover; transition: transform .55s var(--ease); }
-.site-content-shell .service-overview-card:hover > img { transform: scale(1.035); }
-.site-content-shell .service-overview-copy { display: flex; min-height: 202px; flex-direction: column; align-items: flex-start; padding: 17px 17px 16px; }
-.site-content-shell .service-overview-copy > span { color: #18783b; font-size: 7px; font-weight: 700; letter-spacing: .13em; }
-.site-content-shell .service-overview-copy h3 { margin: 10px 0 7px; font-size: 14px; font-weight: 600; letter-spacing: -.025em; line-height: 1.4; }
-.site-content-shell .service-overview-copy p { margin: 0 0 14px; color: #676b6e; font-size: 9px; line-height: 1.75; }
-.site-content-shell .service-overview-copy > a { display: flex; width: 100%; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 11px; border-top: 1px solid #e4e2dc; color: #171b24; font-size: 8px; font-weight: 700; }
-.site-content-shell .service-overview-copy > a b { color: #18783b; font-size: 12px; }
-.site-content-shell .service-overview-disclaimer { margin: 17px 0 0; color: #858782; font-size: 7px; line-height: 1.6; text-align: right; }
-@media (max-width: 900px) {
-  .site-content-shell .service-overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-  .site-content-shell .service-overview-card > img { height: clamp(190px, 29vw, 260px); }
-  .site-content-shell .service-overview-copy { min-height: 180px; }
+.craft-sequence { position: relative; height: 235vh; overflow: clip; background: #14271f; color: #fff; }
+.craft-sequence-inner { position: sticky; top: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 5vw; width: 100%; height: 100svh; min-height: 600px; padding: 9vh var(--gutter); }
+.craft-copy { max-width: 520px; }
+.craft-kicker { display: block; margin-bottom: 27px; color: #d9dba7; font-size: 8px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.craft-copy h2 { margin: 0 0 22px; color: #fff; font-size: clamp(47px, 6vw, 82px); font-weight: 500; line-height: .98; letter-spacing: -.07em; }
+.craft-copy h2 em { color: #d9d36d; font-family: var(--serif); font-weight: 400; }
+.craft-copy > p { max-width: 390px; color: #d5ddd5; font-size: 12px; line-height: 1.9; }
+.craft-frame { display: flex; max-width: 320px; justify-content: space-between; margin-top: 45px; padding-top: 14px; border-top: 1px solid #ffffff45; color: #daddcf; font-size: 7px; letter-spacing: .14em; }
+.craft-frame span { color: #d9d36d; }
+.craft-canvas-wrap { position: relative; height: min(66vh, 590px); min-height: 330px; overflow: hidden; border: 1px solid #ffffff26; border-radius: 8px; background: #14271f; box-shadow: 0 25px 80px #0003; }
+.craft-canvas-wrap canvas { display: block; width: 100%; height: 100%; }
+.craft-canvas-wrap > span { position: absolute; right: 16px; bottom: 15px; color: #ffffffa8; font-size: 6px; letter-spacing: .12em; }
+@media (max-width: 760px) {
+  .craft-sequence { height: 190vh; }
+  .craft-sequence-inner { grid-template-columns: 1fr; align-content: center; gap: 28px; min-height: 0; padding: 95px var(--gutter) 55px; }
+  .craft-kicker { margin-bottom: 19px; }
+  .craft-copy h2 { margin-bottom: 14px; font-size: clamp(43px, 9vw, 62px); }
+  .craft-copy > p { max-width: 430px; font-size: 10px; }
+  .craft-frame { margin-top: 23px; }
+  .craft-canvas-wrap { height: 43vh; min-height: 230px; }
 }
-@media (max-width: 600px) {
-  .site-content-shell .service-overview { padding-top: 67px; padding-bottom: 44px; }
-  .site-content-shell .service-overview-heading { align-items: flex-start; flex-direction: column; gap: 18px; margin-bottom: 26px; }
-  .site-content-shell .service-overview-heading .section-kicker { margin-bottom: 25px; }
-  .site-content-shell .service-overview-heading h2 { font-size: clamp(37px, 9vw, 49px); }
-  .site-content-shell .service-overview-intro { max-width: 420px; }
-  .site-content-shell .service-overview-grid { grid-template-columns: 1fr; gap: 12px; }
-  .site-content-shell .service-overview-card { display: grid; grid-template-columns: 38% 1fr; min-height: 175px; }
-  .site-content-shell .service-overview-card > img { width: 100%; height: 100%; min-height: 175px; }
-  .site-content-shell .service-overview-copy { min-height: 175px; padding: 14px 13px 12px; }
-  .site-content-shell .service-overview-copy h3 { margin: 7px 0 5px; font-size: 12px; }
-  .site-content-shell .service-overview-copy p { margin-bottom: 8px; font-size: 8px; }
-  .site-content-shell .service-overview-disclaimer { text-align: left; }
-}
+@media(prefers-reduced-motion:reduce) { .craft-sequence { height: auto; min-height: 100svh; } .craft-sequence-inner { position: relative; min-height: 100svh; } }

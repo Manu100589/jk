@@ -10,12 +10,12 @@
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://commons.wikimedia.org" />
     <link rel="icon" href="./assets/jk-consulting-logo.jpeg" type="image/jpeg" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./hero.css" />
     <link rel="stylesheet" href="./sections.css" />
+    <link rel="stylesheet" href="./assets/runtime/site-runtime.css" />
     <title>JK CONSULTING — Votre patrimoine, notre engagement</title>
   </head>
   <body>
@@ -41,6 +41,7 @@
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-shell">
           <div class="hero-image" role="img" aria-label="Illustration architecturale d’une maison contemporaine dans un paysage de hauts reliefs tropicaux camerounais"></div>
+          <div class="hero-3d-frame" id="hero-scene-root" aria-hidden="true"></div>
           <div class="hero-shade"></div>
           <nav class="hero-rail" aria-label="Accès rapide">
             <a class="rail-link rail-active" href="#top" aria-label="Accueil"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-6v-7h-4v7H4a1 1 0 0 1-1-1z"/></svg></a>
@@ -52,7 +53,7 @@
           </nav>
           <div class="hero-content">
             <div class="eyebrow light-eyebrow"><i></i> Gestion foncière & immobilière · Cameroun</div>
-            <h1 id="hero-title">Votre patrimoine<br />foncier mérite une<br /><em>sécurité absolue.</em></h1>
+            <h1 id="hero-title"><span class="title-line"><span>Votre patrimoine</span></span><br /><span class="title-line"><span>foncier mérite une</span></span><br /><span class="title-line"><span><em>sécurité absolue.</em></span></span></h1>
             <p class="hero-copy">Du terrain à votre projet immobilier, JK CONSULTING vous accompagne avec méthode, transparence et expertise.</p>
             <div class="hero-actions"><a class="button button-light" href="#services">Découvrir nos services <span aria-hidden="true">↗</span></a><a class="hero-contact-link" href="#contact"><span aria-hidden="true">↗</span><span>Parler à un<br />conseiller</span></a></div>
           </div>
@@ -84,23 +85,11 @@
         <div class="about-copy"><div class="section-kicker"><span>Qui sommes-nous</span><i></i></div><span class="supra-label">L’expertise, à vos côtés.</span><h2>Une expertise au service de votre <em>patrimoine.</em></h2><p>JK CONSULTING est une entreprise camerounaise spécialisée dans la gestion intégrale du patrimoine foncier et immobilier. Nous accompagnons particuliers, investisseurs et professionnels, de l’identification des opportunités au suivi des opérations.</p><p>Grâce à une approche structurée et un accompagnement adapté, nous vous aidons à mieux comprendre vos démarches, à anticiper les difficultés et à avancer plus sereinement.</p><div class="address-note"><span class="address-pin" aria-hidden="true">⌖</span><span>Face à la station Total,<br /><strong>borne 10, Cameroun.</strong></span><a href="#contact" aria-label="Voir les coordonnées">↗</a></div><a href="#contact" class="button button-dark">Faisons connaissance <span>↗</span></a></div>
       </section>
 
-      <section class="service-overview section-pad" aria-labelledby="service-overview-title">
-        <div class="service-overview-heading">
-          <div><div class="section-kicker"><span>Nos expertises</span><i></i></div><span class="supra-label">Un accompagnement à chaque étape.</span><h2 id="service-overview-title">Des services pensés<br />pour votre <em>projet.</em></h2></div>
-          <div class="service-overview-intro"><p>Du dossier foncier au suivi immobilier, nos équipes vous orientent vers les démarches et expertises adaptées à votre besoin.</p><a href="#services" class="text-link dark-link">Voir les 12 prestations <span>↗</span></a></div>
-        </div>
-        <div class="service-overview-grid">
-          <article class="service-overview-card"><img src="./assets/service-foncier.png" alt="Un conseiller examine un plan foncier avec des clients" loading="lazy" /><div class="service-overview-copy"><span>01 · FONCIER</span><h3>Sécurisation &amp; démarches foncières</h3><p>Appui pour l’immatriculation, les mutations et la préparation de vos dossiers fonciers.</p><a href="#services" aria-label="Découvrir les services fonciers">Découvrir <b>↗</b></a></div></article>
-          <article class="service-overview-card"><img src="./assets/terrain-survey-cameroon.png" alt="Des professionnels réalisent un relevé topographique sur un terrain" loading="lazy" /><div class="service-overview-copy"><span>02 · TERRAIN</span><h3>Topographie &amp; lotissement</h3><p>Relevés, repérage et accompagnement pour organiser vos projets d’aménagement.</p><a href="#services" aria-label="Découvrir les services de topographie et lotissement">Découvrir <b>↗</b></a></div></article>
-          <article class="service-overview-card"><img src="./assets/service-immobilier.png" alt="Un conseiller immobilier présente un bien à une cliente" loading="lazy" /><div class="service-overview-copy"><span>03 · IMMOBILIER</span><h3>Transactions &amp; gestion immobilière</h3><p>Conseil pour la vente, la location et le suivi de vos biens immobiliers.</p><a href="#services" aria-label="Découvrir les services immobiliers">Découvrir <b>↗</b></a></div></article>
-          <article class="service-overview-card"><img src="./assets/service-construction.png" alt="Une équipe technique étudie un plan sur un chantier résidentiel" loading="lazy" /><div class="service-overview-copy"><span>04 · PROJETS</span><h3>Construction &amp; suivi de projet</h3><p>Accompagnement dans la préparation et le suivi de vos projets de construction.</p><a href="#services" aria-label="Découvrir les services de construction">Découvrir <b>↗</b></a></div></article>
-        </div>
-        <p class="service-overview-disclaimer">Images générées à titre d’illustration. Elles ne représentent pas nécessairement des clients, des biens ou des réalisations de JK CONSULTING.</p>
-      </section>
-      <section class="services section-pad" id="services">
-        <div class="services-head"><div><div class="section-kicker"><span>Ce que nous faisons</span><i></i><span>02 — 04</span></div><span class="supra-label">Le bon interlocuteur pour vos projets.</span><h2>Toutes vos solutions,<br /><em>au même endroit.</em></h2></div><div class="services-intro-controls"><p>Explorez nos expertises et choisissez les services adaptés à votre projet.</p><div class="carousel-controls"><button type="button" data-service-scroll="-1" aria-label="Voir les services précédents">←</button><button type="button" data-service-scroll="1" aria-label="Voir les services suivants">→</button></div></div></div>
-        <div class="service-grid" id="service-grid"></div>
-        <div class="services-foot"><span>Douze expertises. Une même exigence de clarté.</span><a class="text-link dark-link" href="#contact">Parlons de votre projet <span>↗</span></a></div>
+      <section class="services section-pad" id="services" aria-labelledby="service-overview-title">
+        <div class="services-head"><div><div class="section-kicker"><span>Nos expertises</span><i></i><span>12 SERVICES</span></div><span class="supra-label">Un accompagnement à chaque étape.</span><h2 id="service-overview-title">Des services pensés<br />pour votre <em>projet.</em></h2></div><div class="services-intro-controls"><p>Du dossier foncier au suivi immobilier, parcourez les douze prestations de JK CONSULTING.</p><div class="carousel-controls" aria-label="Navigation des services"><button type="button" data-service-scroll="-1" aria-label="Voir les services précédents">←</button><button type="button" data-service-scroll="1" aria-label="Voir les services suivants">→</button></div></div></div>
+        <div class="service-grid" id="service-grid" role="region" aria-label="Les 12 services de JK CONSULTING" tabindex="0"></div>
+        <div class="service-slider-meta" aria-live="polite" aria-atomic="true"><span class="service-slider-range"><span id="service-slider-current">01–04</span> <b>/ 12 services</b></span><div class="service-slider-progress" aria-hidden="true"><span id="service-slider-progress"></span></div><span class="service-slider-hint">Défiler pour explorer</span></div>
+        <div class="services-foot"><span>Images d’illustration. Elles ne représentent pas nécessairement des clients, des biens ou des réalisations de JK CONSULTING.</span><a class="text-link dark-link" href="#contact">Parlons de votre projet <span>↗</span></a></div>
       </section>
 
       <section class="process section-pad" id="etapes">
@@ -113,6 +102,8 @@
         </div>
         <div class="process-foot"><span>UNE MÉTHODE À VISAGE HUMAIN</span><span>DU PREMIER ÉCHANGE À LA SUITE</span></div>
       </section>
+
+      <div id="craft-sequence-root"></div>
 
       <section class="listings section-pad" id="biens">
         <div class="section-kicker"><span>Les opportunités</span><i></i><span>04 — 04</span></div>
@@ -143,9 +134,11 @@
     <footer class="site-footer"><div class="footer-main"><div class="footer-brand-col"><a class="brand footer-brand" href="#top" aria-label="JK Consulting, accueil"><span class="brand-logo-frame"><img class="brand-logo" src="./assets/jk-consulting-logo.jpeg" alt="JK Consulting" /></span></a><p>Un partenaire de confiance pour votre patrimoine foncier et immobilier au Cameroun.</p><span class="footer-coordinate">CAMEROUN&nbsp;&nbsp; · &nbsp;&nbsp;BORNE 10</span></div><div class="footer-col"><span class="footer-label">EXPLORER</span><a href="#apropos">À propos</a><a href="#services">Nos services</a><a href="#biens">Opportunités</a><a href="#etapes">Notre méthode</a></div><div class="footer-col"><span class="footer-label">NOS EXPERTISES</span><a href="#services">Immatriculation</a><a href="#services">Lotissement</a><a href="#services">Gestion immobilière</a><a href="#services">Levés topographiques</a></div><div class="footer-col footer-contact"><span class="footer-label">ÉCHANGEONS</span><span>Face à la station Total,<br />borne 10, Cameroun.</span><a class="js-whatsapp" href="#contact">WhatsApp <span>↗</span></a><a href="#contact">Parler à un conseiller <span>↗</span></a></div></div><div class="footer-bottom"><span>© <span id="year"></span> JK CONSULTING · Votre patrimoine, notre engagement.</span><div><a href="#mentions" data-legal="mentions">Mentions légales</a><a href="#confidentialite" data-legal="privacy">Confidentialité</a></div><a href="#top" class="back-top">Retour en haut ↑</a></div><p class="legal-note" id="legal-note" hidden></p></footer>
     <dialog class="service-dialog" id="service-dialog"><button class="dialog-close" aria-label="Fermer">×</button><span class="dialog-number"></span><div class="dialog-icon"></div><h2></h2><p></p><a class="button button-dark dialog-cta" href="#contact">Parler de ce service <span>↗</span></a></dialog>
     <dialog class="listing-dialog" id="listing-dialog"><button class="dialog-close" aria-label="Fermer">×</button><img alt="" /><span class="dialog-number"></span><h2></h2><p class="listing-detail-meta"></p><p class="listing-detail-description"></p><a class="button button-dark dialog-cta" href="#contact">Demander les informations <span>↗</span></a></dialog>
+    <div id="editorial-runtime-root" hidden></div>
     <script src="./config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
     <script src="./app.js" defer></script>
+    <script type="module" src="./assets/runtime/site-runtime.js"></script>
   </body>
 </html>

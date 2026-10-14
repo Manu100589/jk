@@ -15,12 +15,18 @@
     ["Location d’engins", "Solutions de location d’engins destinés aux travaux et chantiers.", "⚙"]
   ];
   const serviceImages = [
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Champ_bana.jpg?width=720",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Centre_ville_douala.jpg?width=720",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Mairie_de_Douala_5_e.jpg?width=720",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Tourisme_rural_%28Cameroun%29.jpg?width=720",
-    "https://commons.wikimedia.org/wiki/Special:FilePath/Mount_Cameroon_grassland_field.jpg?width=720",
-    "./assets/hero-cameroun-concept.png"
+    "./assets/service-foncier.png",
+    "./assets/terrain-survey-cameroon.png",
+    "./assets/service-immobilier.png",
+    "./assets/service-foncier.png",
+    "./assets/service-construction.png",
+    "./assets/service-immobilier.png",
+    "./assets/service-foncier.png",
+    "./assets/service-immobilier.png",
+    "./assets/service-foncier.png",
+    "./assets/terrain-survey-cameroon.png",
+    "./assets/terrain-survey-cameroon.png",
+    "./assets/service-construction.png"
   ];
   const grid = document.querySelector("#service-grid");
   services.forEach(([name, description, icon], i) => {
@@ -36,7 +42,14 @@
   document.querySelectorAll("[data-service-scroll]").forEach(button => {
     button.addEventListener("click", () => {
       const direction = Number(button.dataset.serviceScroll) || 1;
-      grid.scrollBy({ left: direction * grid.clientWidth * 0.82, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      if (typeof window.__serviceNavigate === "function") {
+        window.__serviceNavigate(direction);
+        return;
+      }
+      const card = grid.firstElementChild;
+      const gap = parseFloat(getComputedStyle(grid).gap || "0") || 0;
+      const distance = (card ? card.getBoundingClientRect().width : grid.clientWidth * 0.8) + gap;
+      grid.scrollBy({ left: direction * distance, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     });
   });
 

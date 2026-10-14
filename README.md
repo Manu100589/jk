@@ -1,12 +1,25 @@
 # JK CONSULTING
 
-Site vitrine responsive en HTML, CSS et JavaScript, sans étape de compilation.
+Site vitrine responsive de JK CONSULTING. Le contenu reste servi comme des fichiers statiques ; un runtime React/Vite compilé ajoute les scènes 3D et les animations éditoriales.
 
-La section hero conserve son design dédié dans `hero.css`. Les sections suivantes reprennent une mise en page éditoriale claire et illustrée, définie dans `sections.css`. Les services réutilisent les visuels camerounais documentaires de la mosaïque et l’illustration conceptuelle ; les images sont étiquetées comme illustrations.
+La section hero conserve son design dédié dans `hero.css`. Les sections éditoriales sont définies dans `sections.css`. La grille de services et le visuel 3D utilisent des images d’illustration locales ; elles ne représentent pas nécessairement l’équipe, les clients, les biens ou les réalisations de l’entreprise.
 
 ## Aperçu local
 
-Ouvrir `index.html` dans un navigateur ou servir ce dossier avec un serveur HTTP statique.
+Pour afficher le site statique, servir le dossier avec un serveur HTTP. Pour développer le runtime React/Three.js :
+
+```sh
+npm install
+npm run dev
+```
+
+Pour recompiler le runtime embarqué par la page statique :
+
+```sh
+npm run build
+```
+
+La compilation copie les bundles dans `assets/runtime`, utilisés directement par `index.html` sur GitHub Pages.
 
 ## Réglages de mise en production
 
@@ -22,4 +35,4 @@ Les données de contact sont volontairement laissées vides. Le formulaire indiq
 
 Le logo reçu est placé dans `assets/jk-consulting-logo.jpeg` et utilisé dans l’en-tête, le pied de page et comme favicon. `assets/hero-cameroun-concept.png` est une illustration architecturale conceptuelle créée pour la bannière, et `assets/cta-cameroun-concept.webp` une image de fond conceptuelle pour l’appel à contact : les lieux représentés ne sont pas des annonces ni des réalisations de JK CONSULTING. Les photos documentaires camerounaises sont créditées dans la galerie et ne représentent pas non plus les biens ou réalisations de l’entreprise.
 
-Les polices et animations chargent depuis Google Fonts et jsDelivr. Les photos camerounaises sont servies depuis Wikimedia Commons ; leurs auteurs, pages sources et licences sont indiqués dans la galerie du site. Prévoir une connexion internet, ou remplacer ces ressources par des fichiers locaux avant un déploiement hors ligne.
+Les polices et les modules GSAP de l’ancien runtime chargent depuis Google Fonts et jsDelivr. Les scènes React/Three.js, Lenis et les visuels de services sont embarqués dans le runtime compilé et les fichiers locaux du site.

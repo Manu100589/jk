@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jk-green: #159b3b;
+  --color-jk-violet: #7136a8;
+  --color-jk-ink: #171b24;
+}
+
+@layer utilities {
+  .preserve-3d { transform-style: preserve-3d; }
+  .motion-safe-only { animation: none; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-safe-only { animation: jk-soft-pulse 4s ease-in-out infinite; }
+}
+
+@keyframes jk-soft-pulse {
+  0%, 100% { opacity: .78; }
+  50% { opacity: 1; }
+}
